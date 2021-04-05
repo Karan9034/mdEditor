@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import Navbar from './components/Navbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
-
+import txt from './txt'
 
 const App = () =>{
-	const [md, setMd] = useState('')
+	const [md, setMd] = useState(txt)
 
 	return(
 		<React.Fragment>
