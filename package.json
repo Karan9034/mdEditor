@@ -20,7 +20,10 @@
 	},
 	"homepage": "https://karan9034.github.io/mdEditor",
 	"dependencies": {
+		"@material-ui/core": "^4.12.1",
+		"@material-ui/icons": "^4.11.2",
 		"marked": "^2.0.1",
+		"prismjs": "^1.24.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-simple-code-editor": "^0.11.0"

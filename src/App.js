@@ -1,28 +1,27 @@
-import React, {useState} from 'react'
-import Navbar from './components/Navbar'
-import Editor from './components/Editor'
-import Preview from './components/Preview'
-import txt from './txt'
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import CodeEditor from "./components/CodeEditor";
+import Preview from "./components/Preview";
+import txt from "./txt";
 
-const App = () =>{
-	const [md, setMd] = useState(txt)
+const App = () => {
+	const [md, setMd] = useState(txt);
 
-	return(
-		<React.Fragment>
+	return (
+		<>
 			<Navbar />
-			<div className="container">
+			<div className="container-fluid">
 				<div className="row">
 					<div className="col-md-6">
-						<Editor setMd={setMd} md={md}/>
+						<CodeEditor setMd={setMd} md={md} />
 					</div>
 					<div className="col-md-6">
-						<Preview md={md}/>
+						<Preview md={md} />
 					</div>
 				</div>
 			</div>
-		</React.Fragment>
-	)
-}
-
+		</>
+	);
+};
 
 export default App;
