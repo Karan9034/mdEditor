@@ -1,11 +1,9 @@
 import React from "react";
-import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism.css";
+import AceEditor from "react-ace";
 import Typography from "@material-ui/core/Typography";
 import EditOutlined from "@material-ui/icons/EditOutlined";
+import "ace-builds/src-noconflict/theme-dracula";
+import "ace-builds/src-noconflict/mode-markdown";
 
 function CodeEditor({ setMd, md }) {
 	return (
@@ -17,23 +15,24 @@ function CodeEditor({ setMd, md }) {
 					alignItems: "center",
 					justifyContent: "center",
 					display: "flex",
+					color: "#fff",
 				}}
 			>
 				Enter Your Markdown Here &nbsp;&nbsp;
 				<EditOutlined fontSize="large" />
 			</Typography>
+			<textarea id="copy" value={md} readOnly></textarea>
 			<div className="editor">
-				<Editor
+				<AceEditor
+					mode="markdown"
+					theme="dracula"
 					value={md}
-					onValueChange={(md) => setMd(md)}
-					highlight={(md) => highlight(md, languages.text)}
-					padding={10}
+					onChange={(md) => setMd(md)}
+					name="editor"
+					width="100%"
 					style={{
-						fontFamily: '"Fira code", "Fira Mono", monospace',
-						fontSize: 12,
-						backgroundColor: "#fff",
 						cursor: "text",
-						minHeight: "80vh",
+						minHeight: "75vh",
 					}}
 				/>
 			</div>
